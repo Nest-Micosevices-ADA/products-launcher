@@ -1,0 +1,9 @@
+dist/
+
+node_module/
+client-gateway/
+order-ms/
+products-ms/
+.env
+
+.vscode/
