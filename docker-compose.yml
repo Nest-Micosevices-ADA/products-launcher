@@ -33,6 +33,8 @@ services:
 
 # # Orders-ms
   orders-ms:
+    depends_on:
+      - orders-db
     build: ./orders-ms
     volumes:
       - ./orders-ms/src:/usr/src/app/src
@@ -41,8 +43,6 @@ services:
       - PORT=3002
       - DATABASE_URL=postgresql://postgres:123456@orders-db:5432/ordersdb?schema=public
       - NATS_SERVERS=nats://nats-sever:4222
-    depends_on:
-        - orders-db
 
   
 
